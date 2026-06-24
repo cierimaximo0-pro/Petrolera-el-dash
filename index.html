@@ -1,270 +1,437 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petrolera El Dash</title>
+<title>Petroleras El Dash S.A.</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#0d1117;
-    color:#ffffff;
-    line-height:1.6;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+    line-height:1.7;
 }
 
-header{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    padding:30px;
-    text-align:center;
-    border-bottom:3px solid #f59e0b;
-}
-
-header h1{
-    font-size:3rem;
-    color:#f59e0b;
-}
-
-header p{
-    font-size:1.2rem;
-    margin-top:10px;
-}
+/* NAVBAR */
 
 nav{
-    background:#111827;
-    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    padding:18px;
     text-align:center;
 }
 
 nav a{
-    color:white;
     text-decoration:none;
+    color:#0f4c81;
+    font-weight:600;
     margin:0 15px;
-    font-weight:bold;
-    transition:0.3s;
 }
 
 nav a:hover{
-    color:#f59e0b;
+    color:#16a34a;
 }
 
+/* HERO */
+
 .hero{
-    height:500px;
-    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-    url("https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1920");
+    min-height:90vh;
+    background:linear-gradient(
+        rgba(15,76,129,0.75),
+        rgba(15,76,129,0.75)
+    ),
+    url("https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600");
     background-size:cover;
     background-position:center;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+    color:white;
+    padding:40px;
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:900px;
 }
 
-.hero h2{
-    font-size:3rem;
-    color:#f59e0b;
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
 }
 
 .hero p{
-    margin-top:15px;
-    font-size:1.2rem;
+    font-size:1.3rem;
+    margin-bottom:30px;
 }
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#16a34a;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+/* SECCIONES */
 
 section{
-    padding:60px 10%;
+    padding:80px 10%;
 }
 
-section h2{
-    color:#f59e0b;
-    margin-bottom:20px;
+.section-title{
     text-align:center;
+    color:#0f4c81;
+    margin-bottom:20px;
+    font-size:2.3rem;
 }
+
+.section-subtitle{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    margin-bottom:50px;
+}
+
+/* TARJETAS */
 
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:30px;
+    gap:25px;
 }
 
 .card{
-    background:#1f2937;
+    background:white;
     padding:25px;
     border-radius:12px;
-    transition:.3s;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.card h3{
+    color:#0f4c81;
+    margin-bottom:10px;
 }
 
-footer{
-    background:#111827;
+/* TIMELINE */
+
+.timeline{
+    max-width:700px;
+    margin:auto;
     text-align:center;
-    padding:25px;
+    font-size:1.2rem;
+    line-height:2.3;
+}
+
+/* TABLA */
+
+table{
+    width:100%;
+    border-collapse:collapse;
     margin-top:30px;
 }
 
-ul{
-    margin-left:20px;
+table th{
+    background:#0f4c81;
+    color:white;
+    padding:15px;
 }
 
-.highlight{
-    color:#f59e0b;
-    font-weight:bold;
+table td{
+    border:1px solid #ddd;
+    padding:15px;
+    text-align:center;
 }
+
+/* DASH VERDE */
+
+.green{
+    background:#ecfdf5;
+}
+
+.green h2{
+    color:#15803d;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f4c81;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+footer p{
+    margin:8px 0;
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-    <h1> Petrolera El Dash</h1>
-    <p>Impulsando el futuro con energía</p>
-</header>
-
 <nav>
-    <a href="#empresa">Empresa</a>
-    <a href="#procesos">Procesos</a>
-    <a href="#quimica">Química</a>
-    <a href="#sustentabilidad">Sustentabilidad</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#petroleo">Petróleo</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#refinacion">Refinación</a>
+    <a href="#verde">El Dash Verde</a>
     <a href="#contacto">Contacto</a>
 </nav>
 
-<section class="hero">
+<header class="hero">
     <div class="hero-content">
-        <h2>Energía para mover al mundo</h2>
+        <h1>PETROLERAS EL DASH S.A.</h1>
+
         <p>
-            Exploramos, extraemos y refinamos petróleo para transformarlo
-            en los productos que utilizamos todos los días.
+            Energía para impulsar el presente y construir el futuro.
         </p>
+
+        <a href="#nosotros" class="btn">
+            Conocer más
+        </a>
     </div>
-</section>
+</header>
 
-<section id="empresa">
-    <h2>¿Quiénes Somos?</h2>
-    <p>
-        <span class="highlight">Petrolera El Dash</span> es una empresa argentina
-        dedicada a la exploración, extracción, refinación y distribución de petróleo.
-        Nuestro objetivo es brindar energía de manera eficiente, segura y responsable,
-        utilizando tecnología moderna y procesos químicos avanzados.
+<section id="nosotros">
+
+    <h2 class="section-title">
+        Sobre Nosotros
+    </h2>
+
+    <p class="section-subtitle">
+        Somos una empresa argentina dedicada a la exploración,
+        extracción, transporte, refinación y comercialización
+        del petróleo y sus derivados.
+        Operamos en la Cuenca Neuquina y trabajamos para
+        abastecer de energía a la sociedad mediante procesos
+        seguros, eficientes y responsables.
     </p>
-</section>
-
-<section id="procesos">
-    <h2>Nuestros Procesos</h2>
 
     <div class="cards">
 
         <div class="card">
-            <h3>🔍 Exploración</h3>
+            <h3>Misión</h3>
             <p>
-                Buscamos yacimientos mediante estudios geológicos
-                y tecnología de detección avanzada.
+                Transformar el petróleo en productos útiles
+                para la sociedad de forma segura y eficiente.
             </p>
         </div>
 
         <div class="card">
-            <h3>🛢 Extracción</h3>
+            <h3>Visión</h3>
             <p>
-                Obtenemos petróleo crudo desde pozos terrestres
-                y plataformas especializadas.
+                Ser líderes en innovación, eficiencia y
+                sustentabilidad dentro del sector energético.
             </p>
         </div>
 
         <div class="card">
-            <h3>🏭 Refinación</h3>
+            <h3>Ubicación</h3>
             <p>
-                Transformamos el petróleo en combustibles y
-                productos industriales esenciales.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🚚 Distribución</h3>
-            <p>
-                Transportamos nuestros productos de forma segura
-                a todo el país.
+                Operamos principalmente en la Cuenca Neuquina,
+                una de las regiones energéticas más importantes
+                de Argentina.
             </p>
         </div>
 
     </div>
-</section>
-
-<section id="quimica">
-    <h2>La Química del Petróleo</h2>
-
-    <p>
-        El petróleo es una mezcla compleja de hidrocarburos formada
-        durante millones de años a partir de restos orgánicos sometidos
-        a altas presiones y temperaturas.
-    </p>
-
-    <br>
-
-    <p>
-        En Petrolera El Dash utilizamos el proceso de
-        <span class="highlight">destilación fraccionada</span>,
-        que permite separar los componentes del petróleo según
-        sus diferentes puntos de ebullición.
-    </p>
-
-    <br>
-
-    <h3>Productos obtenidos:</h3>
-
-    <ul>
-        <li>Gas licuado</li>
-        <li>Nafta</li>
-        <li>Queroseno</li>
-        <li>Gasoil</li>
-        <li>Lubricantes</li>
-        <li>Asfalto</li>
-        <li>Plásticos</li>
-    </ul>
 
 </section>
 
-<section id="sustentabilidad">
-    <h2>Compromiso Ambiental</h2>
+<section id="petroleo">
 
-    <p>
-        Sabemos que la producción de energía debe ser responsable.
-        Por eso implementamos programas de:
+    <h2 class="section-title">
+        ¿Qué es el Petróleo?
+    </h2>
+
+    <p class="section-subtitle">
+        El petróleo es una mezcla natural de hidrocarburos,
+        compuesta principalmente por carbono e hidrógeno.
+        Es una de las fuentes de energía más importantes
+        del mundo moderno y la materia prima de miles de
+        productos que utilizamos diariamente.
     </p>
 
-    <br>
+    <div class="cards">
 
-    <ul>
-        <li>🌱 Reforestación.</li>
-        <li>💧 Tratamiento de aguas utilizadas en procesos industriales.</li>
-        <li>♻️ Reducción de emisiones contaminantes.</li>
-        <li>⚡ Investigación en energías renovables.</li>
-    </ul>
+        <div class="card">⛽ Nafta y Gasoil</div>
+        <div class="card">🧴 Lubricantes</div>
+        <div class="card">🛣️ Asfalto</div>
+        <div class="card">🧪 Productos Químicos</div>
+        <div class="card">🧸 Plásticos</div>
+        <div class="card">🎨 Pinturas</div>
+
+    </div>
 
 </section>
 
-<section id="contacto">
-    <h2>Contacto</h2>
+<section>
 
-    <p>📧 contacto@petroleraeldash.com</p>
+    <h2 class="section-title">
+        Formación del Petróleo
+    </h2>
+
+    <div class="timeline">
+
+        Organismos marinos<br>
+        ↓<br>
+        Acumulación de restos orgánicos<br>
+        ↓<br>
+        Enterramiento por sedimentos<br>
+        ↓<br>
+        Alta presión y temperatura<br>
+        ↓<br>
+        Formación del petróleo
+
+    </div>
+
+</section>
+
+<section id="tecnologia">
+
+    <h2 class="section-title">
+        Tecnología e Innovación
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Perforación Horizontal</h3>
+            <p>
+                Permite extraer más petróleo desde un único pozo.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Fracturamiento Hidráulico</h3>
+            <p>
+                Facilita la liberación de petróleo atrapado en la roca.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Recuperación Mejorada</h3>
+            <p>
+                Utiliza CO₂, vapor y polímeros para aumentar la extracción.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Nanotecnología</h3>
+            <p>
+                Mejora la eficiencia de producción en los yacimientos.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="refinacion">
+
+    <h2 class="section-title">
+        Refinación y Productos
+    </h2>
+
+    <p class="section-subtitle">
+        Mediante la destilación fraccionada, el petróleo crudo
+        se separa en distintos productos según sus puntos de ebullición.
+    </p>
+
+    <table>
+
+        <tr>
+            <th>Producto</th>
+            <th>Uso Principal</th>
+        </tr>
+
+        <tr>
+            <td>Nafta</td>
+            <td>Automóviles</td>
+        </tr>
+
+        <tr>
+            <td>Gasoil</td>
+            <td>Camiones y maquinaria</td>
+        </tr>
+
+        <tr>
+            <td>Queroseno</td>
+            <td>Aviación</td>
+        </tr>
+
+        <tr>
+            <td>Gas Licuado</td>
+            <td>Hogares</td>
+        </tr>
+
+        <tr>
+            <td>Lubricantes</td>
+            <td>Motores</td>
+        </tr>
+
+        <tr>
+            <td>Asfalto</td>
+            <td>Rutas</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<section id="verde" class="green">
+
+    <h2 class="section-title">
+        El Dash Verde
+    </h2>
+
+    <p class="section-subtitle">
+        Nuestro programa de sustentabilidad busca producir
+        energía reduciendo el impacto ambiental.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">🌱 Reducción de emisiones</div>
+        <div class="card">♻️ Reciclaje industrial</div>
+        <div class="card">💧 Control de derrames</div>
+        <div class="card">⚡ Uso eficiente de energía</div>
+        <div class="card">🔬 Investigación ambiental</div>
+
+    </div>
+
+</section>
+
+<footer id="contacto">
+
+    <h2>Petroleras El Dash S.A.</h2>
+
+    <p>📍 Cuenca Neuquina - Argentina</p>
+    <p>📧 contacto@eldash.com</p>
     <p>📞 +54 11 5555-2026</p>
-    <p>📍 Buenos Aires, Argentina</p>
 
-</section>
-
-<footer>
-    <p>© 2026 Petrolera El Dash - Proyecto Educativo de Química</p>
 </footer>
 
 </body>
 </html>
+```
